@@ -1,9 +1,9 @@
 const express = require("express");
 const app = express();
-require("dotenv").config;
+require("dotenv").config();
 
 const dbConnection = require("./config/db");
-const usrRoutes = require("./routes/userRoutes");
+const userRoutes = require("./routes/userRoutes");
 //INDUCES
 
 //Middleware
@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 //Routes
-app.use("/api/users", usrRoutes);
+app.use("/api/users", userRoutes);
 //Connection
 dbConnection();
 
