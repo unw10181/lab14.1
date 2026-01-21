@@ -2,7 +2,10 @@ const express = require("express");
 const app = express();
 require("dotenv").config;
 
+const dbConnection = require("./config/db");
 //INDUCES
+
+dbConnection();
 
 //PORT
 const PORT = process.env.PORT;
