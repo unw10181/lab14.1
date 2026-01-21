@@ -3,8 +3,16 @@ const app = express();
 require("dotenv").config;
 
 const dbConnection = require("./config/db");
+const usrRoutes = require("./routes/userRoutes");
 //INDUCES
 
+//Middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+//Routes
+app.use("/api/users", usrRoutes);
+//Connection
 dbConnection();
 
 //PORT
